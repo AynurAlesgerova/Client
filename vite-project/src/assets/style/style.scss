@@ -22,14 +22,32 @@
     width: 40px;height: 40px;
 } 
 .brand{
-    width: 280px;   
-}
-.card{
-    // width: 600px;
+    width: 280px; 
+    border: 1px solid #EEF0F2;
+  
 }
 .slogan{
-    z-index: 9;
+    // z-index: 9;
 }
 .card-button{
-    z-index: 99;
+    z-index: 9999;
+    height: 14%;
+}
+.card-image{
+    height:340px;
+    height: 86%;
+}
+
+.social-media-icon{
+    width: 17px;
+    height: 17px;
+}
+.css-1gqfvv-MuiPaper-root{
+    box-shadow: none !important;
+    border: 1px solid #EEF0F2;
+    border-radius: 30px !important;
+    -webkit-border-radius: 30px !important;
+    -moz-border-radius: 30px !important;
+    -ms-border-radius: 30px !important;
+    -o-border-radius: 30px !important;
 }

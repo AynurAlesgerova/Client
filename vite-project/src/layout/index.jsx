@@ -1,4 +1,4 @@
-// import Footer from "../components/Footer"
+import Footer from "./Footer/index";
 import Header from "./Header/index"
 
 export const Layout = ({children}) => {
@@ -6,7 +6,7 @@ export const Layout = ({children}) => {
     <div>
         <Header/>
         {children}
-        {/* <Footer/> */}
+        <Footer/>
     </div>
   )
 }

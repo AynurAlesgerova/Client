@@ -21,11 +21,11 @@ const Product = () => {
       <div className="rating flex items-center gap-3 mt-2 mb-2">
         <p className="font-semibold text-sm">3.7</p>
         <div className="star-percent"><img src={starts}/></div>
-        <div className="comment-count font-light">(120)</div>
+        <div className="comment-count text-slate-400">(120)</div>
       </div>
-      <div className="price flex items-center gap-2">
-        <div className="before-price font-light text-sm line-through">220azn</div>
-        <div className="after-price font-semibold text-lg">180azn</div>
+      <div className="price flex items-center gap-2 pb-2">
+        <div className="before-price text-slate-400 text-sm line-through">220azn</div>
+        <div className="after-price font-semibold text-lg">413.99azn  </div>
       </div>
     </div>
   );
