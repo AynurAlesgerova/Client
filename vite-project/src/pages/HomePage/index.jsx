@@ -1,14 +1,14 @@
 import "swiper/css";
 import nikeLogo from "../../assets/images/nike-logo.svg";
 import Card from "./components/Card/index";
-import appleLogo from "../../assets/images/apple.svg";
-import blueMark from "../../assets/images/blue mark.svg";
 import computer from "../../assets/images/computer.svg";
 import Product from "./components/Product";
-import kotonBack from "../../assets/images/kotonn.png";
+import kotonBack from "../../assets/images/kotonnnn.jpeg";
 import kotonLogo from "../../assets/images/koton-logo.svg";
+import productImage from "../../assets/images/product-image.svg";
+import BrandLogoWrapper from "../../components/BrandLogoWrapper/index";
 import { useState } from "react";
-
+import apple from '../../assets/images/apple.svg'
 const HomePage = () => {
   const [mail, setMail] = useState("");
   return (
@@ -111,34 +111,12 @@ const HomePage = () => {
             className=" py-6 px-4 w-1/3 flex-col rounded-lg"
             style={{ background: "#F7F9FA" }}
           >
-            <div className="brand mb-4 flex gap-4">
-              <div className="p-4 rounded-full bg-white">
-                <img className="brand-img" src={appleLogo} />
-              </div>
-              <div>
-                <div className="name mb-2 flex gap-1 items-center ">
-                  <p className="font-semibold text-lg">Apple</p>
-                  <img src={blueMark} />
-                </div>
-                <div className="rating flex gap-2">
-                  <p
-                    className="px-2  w-1/4 rounded-md bg-emerald-50"
-                    style={{ border: "1px solid #179739" }}
-                  >
-                    9.7
-                  </p>
-                  <p
-                    className="px-2 rounded-md"
-                    style={{
-                      border: "1px solid #FF6400",
-                      backgroundColor: "rgba(255, 100, 0, 0.04)",
-                    }}
-                  >
-                    30.9 izleyici
-                  </p>
-                </div>
-              </div>
-            </div>
+            <BrandLogoWrapper
+              logo={apple}
+              brandName={"Apple"}
+              ratingCount={"9.7"}
+              followerCount={"30.9"}
+            />
             <div className="details flex gap-3 items-center justify-between px-3">
               <div className="p-5 bg-white rounded-lg">
                 <img src={computer} />
@@ -155,34 +133,13 @@ const HomePage = () => {
             className=" py-6 px-4 w-1/3 flex-col rounded-lg"
             style={{ background: "#F7F9FA" }}
           >
-            <div className="brand mb-4 flex gap-4">
-              <div className="p-4 rounded-full bg-white">
-                <img className="brand-img" src={appleLogo} />
-              </div>
-              <div>
-                <div className="name mb-2 flex gap-1 items-center ">
-                  <p className="font-semibold text-lg">Apple</p>
-                  <img src={blueMark} />
-                </div>
-                <div className="rating flex gap-2">
-                  <p
-                    className="px-2 w-1/4 rounded-md  bg-emerald-50"
-                    style={{ border: "1px solid #179739" }}
-                  >
-                    9.7
-                  </p>
-                  <p
-                    className="px-2 rounded-md"
-                    style={{
-                      border: "1px solid #FF6400",
-                      backgroundColor: "rgba(255, 100, 0, 0.04)",
-                    }}
-                  >
-                    30.9 izleyici
-                  </p>
-                </div>
-              </div>
-            </div>
+            <BrandLogoWrapper
+              logo={apple}
+              brandName={"Apple"}
+              ratingCount={"9.7"}
+              followerCount={"30.9"}
+            />
+
             <div className="details flex gap-3 items-center justify-between px-3">
               <div className="p-5 bg-white rounded-lg">
                 <img src={computer} />
@@ -199,34 +156,13 @@ const HomePage = () => {
             className=" py-6 px-4 w-1/3 flex-col rounded-lg"
             style={{ background: "#F7F9FA" }}
           >
-            <div className="brand mb-4 flex gap-4">
-              <div className="p-4 rounded-full bg-white">
-                <img className="brand-img" src={appleLogo} />
-              </div>
-              <div>
-                <div className="name mb-2 flex gap-1 items-center">
-                  <p className="font-semibold text-lg">Apple</p>
-                  <img src={blueMark} />
-                </div>
-                <div className="rating flex gap-2">
-                  <p
-                    className="px-2 w-1/4 rounded-md  bg-emerald-50"
-                    style={{ border: "1px solid #179739" }}
-                  >
-                    9.7
-                  </p>
-                  <p
-                    className="px-2  rounded-md"
-                    style={{
-                      border: "1px solid #FF6400",
-                      backgroundColor: "rgba(255, 100, 0, 0.04)",
-                    }}
-                  >
-                    30.9 izleyici
-                  </p>
-                </div>
-              </div>
-            </div>
+            <BrandLogoWrapper
+              logo={apple}
+              brandName={"Apple"}
+              ratingCount={"9.7"}
+              followerCount={"30.9"}
+            />
+
             <div className="details flex gap-3 items-center justify-between px-3">
               <div className="p-5 bg-white rounded-lg">
                 <img src={computer} />
@@ -353,10 +289,42 @@ const HomePage = () => {
           </div>
         </div>
         <div className="flex gap-6">
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          <Product
+            brand={"Spykar"}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+          <Product
+            brand={"Bershka"}
+            name={"Lorem ipsum dolor sit amet consectetu Dolores praesentium"}
+            currentPrice={250.99}
+            previousPrice={400.99}
+            ratingCount={"4.2"}
+            commentCount={"100"}
+            image={productImage}
+          />
+          <Product
+            brand={"Spykar"}
+            name={"Lorem ipsum dol Dolores praesentium Dolores praesentium"}
+            currentPrice={220.99}
+            previousPrice={190.99}
+            ratingCount={"3.9"}
+            commentCount={"150"}
+            image={productImage}
+          />
+          <Product
+            brand={"Spykar"}
+            name={"Lorem ipsum dol Dolores praesentium Dolores praesentium"}
+            currentPrice={220.99}
+            previousPrice={190.99}
+            ratingCount={"3.9"}
+            commentCount={"150"}
+            image={productImage}
+          />
         </div>
       </section>
     </div>
