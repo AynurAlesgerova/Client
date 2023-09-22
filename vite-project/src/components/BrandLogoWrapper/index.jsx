@@ -1,7 +1,7 @@
 import blueMark from '../../assets/images/blue mark.svg'
 const BrandLogoWrapper = ({logo,brandName,ratingCount,followerCount}) => {
   return (
-    <div className="brand mb-4 flex gap-4 w-full  ">
+    <div className="brand mb-4 flex gap-4 w-full  cursor-pointer">
         <div className="p-4 rounded-full bg-white">
           <img className="brand-img" src={logo} />
         </div>
