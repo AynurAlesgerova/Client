@@ -1,17 +1,17 @@
+//images
 import nikeLogo from "../../assets/images/nike-logo.svg";
 import Card from "./components/Card/index";
 import computer from "../../assets/images/computer.svg";
-import Product from "./components/Product";
 import kotonBack from "../../assets/images/kotonnnn.jpeg";
 import kotonLogo from "../../assets/images/koton-logo.svg";
 import productImage from "../../assets/images/product-image.svg";
-import BrandLogoWrapper from "../../components/BrandLogoWrapper/index";
-import { useState } from "react";
 import apple from "../../assets/images/apple.svg";
+//components
+import Product from "./components/Product";
+import BrandLogoWrapper from "../../components/BrandLogoWrapper/index";
 import Carousel from "../HomePage/components/Carousel/index";
 import ProductSlider from "../HomePage/components/ProductSlider/index";
 const HomePage = () => {
-  const [mail, setMail] = useState("");
   return (
     <div className="">
       <div style={{ height: "480px" }} className="mb-16">

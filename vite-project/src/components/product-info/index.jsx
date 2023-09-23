@@ -1,4 +1,3 @@
-import starts from "../../assets/images/starts.svg";
 import Rating from '../../components/Rating/index'
 const ProductInfo = ({
   brand,

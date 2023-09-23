@@ -1,14 +1,12 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import productImage from "../../../../assets/images/product-image.svg";
-
+import Product from "../Product/index";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-import Product from "../Product/index";
 
 export default function ProductSlider() {
   const [swiperRef, setSwiperRef] = useState(null);

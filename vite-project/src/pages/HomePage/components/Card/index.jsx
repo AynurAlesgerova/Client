@@ -1,5 +1,3 @@
-// import logo from "../../../../assets/images/nike-logo.svg";
-// import background from "../../../../assets/images/nike-bg.svg";
 const Card = ({
   slogan,
   width,
@@ -11,7 +9,7 @@ const Card = ({
 }) => {
   const cardStyle = {
     width: width || "auto",
-    height: height || "auto", // Set the width based on the width prop or 'auto' if not provided
+    height: height || "auto", 
   };
 
   return (

@@ -1,4 +1,5 @@
-import ProductInfo from "../../components/product-info";
+import { useRef, useState } from "react";
+//images
 import productImage from "../../assets/images/product-image.svg";
 import computerImage from "../../assets/images/details-computer-image.svg";
 import favIcon from "../../assets/images/fav-icon.svg";
@@ -7,21 +8,23 @@ import deliveryPurple from "../../assets/images/delivery-purple.svg";
 import dropdownIcon from "../../assets/images/dropdown-icon.svg";
 import plus from "../../assets/images/plus-icon.svg";
 import minus from "../../assets/images/minus-icon.svg";
-import BrandLogoWrapper from "../../components/BrandLogoWrapper/index";
 import apple from "../../assets/images/apple.svg";
 import rightIcon from "../../assets/images/right-arrow.svg";
 import locationIcon from "../../assets/images/location-icon.svg";
 import messageIcon from "../../assets/images/message-icon.svg";
 import startIcon from "../../assets/images/star-icon.svg";
-import { useRef, useState } from "react";
 import icon from "../../assets/images/computer.svg";
 import explaintIcon from "../../assets/images/explaint-icon.svg";
 import agreeIcon from "../../assets/images/agree-icon.svg";
 import appleLogo from "../../assets/images/apple.svg";
 import blueMarkIcon from "../../assets/images/blue mark.svg";
+//components
+import ProductInfo from "../../components/product-info";
+import BrandLogoWrapper from "../../components/BrandLogoWrapper/index";
 import Slider from "../Product Details/components/ImageSlider/index";
 import ProductSlider from "../HomePage/components/ProductSlider";
 import Rating from "../../components/Rating/index";
+
 const ProductDetails = () => {
   const [count, setCount] = useState(1);
   const [freeDelivery, setFreeDelivery] = useState(false);
@@ -29,7 +32,6 @@ const ProductDetails = () => {
   const modelDivRefs = useRef([]);
   const memoryDivRefs = useRef([]);
   const colorDivRefs = useRef([]);
-
   const handleModelClick = (index) => {
     modelDivRefs.current.forEach((ref, i) => {
       if (i === index) {
@@ -416,7 +418,9 @@ const ProductDetails = () => {
               <div className="w-1/2">
                 <Rating value={"3.5"} />
               </div>
-              <p className="text-sm w-1/2" style={{color:'#5D5F70'}}>248 reytinq</p>
+              <p className="text-sm w-1/2" style={{ color: "#5D5F70" }}>
+                248 reytinq
+              </p>
             </div>
           </div>
           <div className="w-4/5 flex-col">
