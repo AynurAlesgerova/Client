@@ -13,14 +13,15 @@ import rightIcon from "../../assets/images/right-arrow.svg";
 import locationIcon from "../../assets/images/location-icon.svg";
 import messageIcon from "../../assets/images/message-icon.svg";
 import startIcon from "../../assets/images/star-icon.svg";
-import starts from "../../assets/images/starts.svg";
 import { useRef, useState } from "react";
 import icon from "../../assets/images/computer.svg";
 import explaintIcon from "../../assets/images/explaint-icon.svg";
 import agreeIcon from "../../assets/images/agree-icon.svg";
 import appleLogo from "../../assets/images/apple.svg";
 import blueMarkIcon from "../../assets/images/blue mark.svg";
-
+import Slider from "../Product Details/components/ImageSlider/index";
+import ProductSlider from "../HomePage/components/ProductSlider";
+import Rating from "../../components/Rating/index";
 const ProductDetails = () => {
   const [count, setCount] = useState(1);
   const [freeDelivery, setFreeDelivery] = useState(false);
@@ -58,8 +59,10 @@ const ProductDetails = () => {
   };
   return (
     <div className="product-details container flex-col items-center justify-center py-5  ">
-      <div className="w-full flex items-center justify-center pb-12 border-b-2 border-slate-100">
-        <div className="image-section w-1/2">{/* //////// */}</div>
+      <div className="w-full flex gap-6 items-center justify-center pb-12 border-b-2 border-slate-100">
+        <div className="image-section w-1/2 p-5">
+          <Slider />
+        </div>
         <div className="details-section w-1/2">
           <div className="product-info mb-4 border-b-2 border-slate-100">
             <ProductInfo
@@ -167,8 +170,12 @@ const ProductDetails = () => {
             </div>
           </div>
           <div className=" pb-5 flex gap-3 mt-4">
-            <div className="py-1 px-2 border-2 flex gap-1 items-center justify-center rounded-lg">
-              <img src={favIcon} style={{ width: "20px", height: "20px" }} />
+            <div className="py-1 px-2 border-2 flex gap-1 items-center justify-center rounded-lg ">
+              <img
+                src={favIcon}
+                style={{ width: "20px", height: "20px" }}
+                className="cursor-pointer"
+              />
               <p className="text-xs font-bold" style={{ color: "#F02F52" }}>
                 (102)
               </p>
@@ -403,10 +410,16 @@ const ProductDetails = () => {
       <div className="rating-rewiews flex-col border-2 border-gray-100 ounded-md px-8 py-10">
         <p className="font-semibold text-xl mb-8 ">Reytinq və baxışlar</p>
         <div className="flex gap-10">
-          <div className="rating-count border-2 border-gray-100 w-1/6">
-            <p className="count">4.9</p>
+          <div className="rating-count border-2 border-gray-100 w-1/6 p-2 pl-4">
+            <p className="count text-3xl font-semibold mb-3">3.5</p>
+            <div className="flex gap-3 items-center">
+              <div className="w-1/2">
+                <Rating value={"3.5"} />
+              </div>
+              <p className="text-sm w-1/2" style={{color:'#5D5F70'}}>248 reytinq</p>
+            </div>
           </div>
-          <div className="messages w-4/5 flex-col">
+          <div className="w-4/5 flex-col">
             <div className="mb-6 flex gap-3">
               <div className="py-1 px-4 border-2 border-gray-100 rounded-md font-medium text-sm cursor-pointer">
                 Bütün rəylər
@@ -479,7 +492,7 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="rating-starts my-3">
-              <img src={starts} />
+              <Rating value={"1.5"} />
             </div>
             <div className="content w-3/4">
               <p className="font-semibold text-sm ">
@@ -531,7 +544,7 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="rating-starts my-3">
-              <img src={starts} />
+              <Rating value={"245"} />
             </div>
             <div className="content w-3/4">
               <p className="font-semibold text-sm ">
@@ -583,7 +596,7 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="rating-starts my-3">
-              <img src={starts} />
+              <Rating value={"2.5"} />
             </div>
             <div className="content w-3/4">
               <p className="font-semibold text-sm ">
@@ -758,6 +771,10 @@ const ProductDetails = () => {
           </p>
         </div>
       </div>
+      <section className="slider-products mt-20" style={{ height: "500px" }}>
+        <p className="font-semibold text-2xl mb-10">Sizə uyğun məhsullar</p>
+        <ProductSlider />
+      </section>
     </div>
   );
 };

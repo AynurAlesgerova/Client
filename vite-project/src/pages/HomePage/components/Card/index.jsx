@@ -18,7 +18,7 @@ const Card = ({
     <div>
       {slogan === true ? (
         <div className="card relative rounded-lg shadow-lg" style={cardStyle}>
-          <img className=" w-3/4 card-image rounded-tl-lg" src={backgroundImg} />
+          <img className=" w-3/4 card-image rounded-tl-lg h-full " src={backgroundImg} />
             <div className="slogan w-1/4 absolute rounded-tr-lg right-0 top-0  flex  justify-center bg-orange-200 px-8  items-center" style={{height:'300px'}}>
               <p className="font-semibold  text-xl"></p>
             </div>

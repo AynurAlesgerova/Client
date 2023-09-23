@@ -1,4 +1,5 @@
 import starts from "../../assets/images/starts.svg";
+import Rating from '../../components/Rating/index'
 const ProductInfo = ({
   brand,
   name,
@@ -18,7 +19,7 @@ const ProductInfo = ({
       <div className="rating flex items-center gap-3 mt-2 mb-2">
         <p className="font-semibold text-sm">{ratingCount}</p>
         <div className="star-percent">
-          <img src={starts} />
+          <Rating value={ratingCount} />
         </div>
         <div className="comment-count text-slate-400">({commentCount})</div>
       </div>
