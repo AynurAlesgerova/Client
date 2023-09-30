@@ -24,7 +24,8 @@ import BrandLogoWrapper from "../../components/BrandLogoWrapper/index";
 import Slider from "../Product Details/components/ImageSlider/index";
 import ProductSlider from "../HomePage/components/ProductSlider";
 import Rating from "../../components/Rating/index";
-
+import HorizontalProgressBar from "./components/progress";
+import Tabs from "../Product Details/components/Tabs/index";
 const ProductDetails = () => {
   const [count, setCount] = useState(1);
   const [freeDelivery, setFreeDelivery] = useState(false);
@@ -59,6 +60,20 @@ const ProductDetails = () => {
       }
     });
   };
+  const decrease = () => {
+    if (count > 1) {
+      setCount((prev) => prev - 1);
+    }
+  };
+
+  const [item, setItem] = useState(1);
+  const tabs = [
+    // { name: "Ümumi təsvir" },
+    { name: "Məhsul xüsusiyyətləri" },
+    { name: "Reytinq və baxışlar" },
+    { name: "Sual-cavablar" },
+  ];
+
   return (
     <div className="product-details container flex-col items-center justify-center py-5  ">
       <div className="w-full flex gap-6 items-center justify-center pb-12 border-b-2 border-slate-100">
@@ -185,7 +200,7 @@ const ProductDetails = () => {
             <div className="count flex shadow-sm border-2 rounded-md">
               <div
                 className="decrease  py-1 px-2  border-r-2 cursor-pointer flex items-center justify-center"
-                onClick={() => setCount((prev) => prev - 1)}
+                onClick={() => decrease()}
               >
                 <img src={minus} style={{ width: "20px", height: "20px" }} />
               </div>
@@ -247,7 +262,7 @@ const ProductDetails = () => {
           {freeDelivery && <div className="py-4">hjkljhg</div>}
         </div>
       </div>
-      <div className="seller-information pt-10">
+      <div className="seller-information pt-10 px-10">
         <h1 className="font-semibold text-xl mb-6">Satıcı məlumatı</h1>
         <div className="flex justify-between items-center">
           <BrandLogoWrapper
@@ -287,493 +302,574 @@ const ProductDetails = () => {
             <img src={rightIcon} />
           </div>
         </div>
-        <div className="features mt-4 px-4 py-10 border-2 border-slate-100">
-          <div className="flex flex-wrap gap-6 pl-10">
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Brend:
-              </p>
-              <p className="text-sm font-semibold">Apple</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Prosessor:
-              </p>
-              <p className="text-sm font-semibold">Apple M1</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Rəng:
-              </p>
-              <p className="text-sm font-semibold">Mavi</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Məhsul növü:
-              </p>
-              <p className="text-sm font-semibold">Kompüter</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Kateqoriya:
-              </p>
-              <p className="text-sm font-semibold">Elektronika</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Yaddaş:
-              </p>
-              <p className="text-sm font-semibold">256GB</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Zəmanət müddəti:
-              </p>
-              <p className="text-sm font-semibold">8 il</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                İstehsalçı ölkə:
-              </p>
-              <p className="text-sm font-semibold">America, China</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Kamera:
-              </p>
-              <p className="text-sm font-semibold">Camera facetime</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Audio:
-              </p>
-              <p className="text-sm font-semibold">Dolby Atmos</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Keyboard:
-              </p>
-              <p className="text-sm font-semibold">Apple magic keyboard</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Wireless:
-              </p>
-              <p className="text-sm font-semibold">Wifi, Bluetooth</p>
-            </div>
-            <div
-              className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
-              style={{ width: "550px" }}
-            >
-              <p style={{ color: "#5D5F70" }} className="text-sm">
-                Port:
-              </p>
-              <p className="text-sm font-semibold">Display port</p>
-            </div>
-          </div>
-        </div>
       </div>
-      <div className="rating-rewiews flex-col border-2 border-gray-100 ounded-md px-8 py-10">
-        <p className="font-semibold text-xl mb-8 ">Reytinq və baxışlar</p>
-        <div className="flex gap-10">
-          <div className="rating-count border-2 border-gray-100 w-1/6 p-2 pl-4">
-            <p className="count text-3xl font-semibold mb-3">3.5</p>
-            <div className="flex gap-3 items-center">
-              <div className="w-1/2">
-                <Rating value={"3.5"} />
-              </div>
-              <p className="text-sm w-1/2" style={{ color: "#5D5F70" }}>
-                248 reytinq
-              </p>
-            </div>
-          </div>
-          <div className="w-4/5 flex-col">
-            <div className="mb-6 flex gap-3">
-              <div className="py-1 px-4 border-2 border-gray-100 rounded-md font-medium text-sm cursor-pointer">
-                Bütün rəylər
-              </div>
-              <div className="py-1 px-4 border-2 border-gray-100 rounded-md font-medium text-sm cursor-pointer">
-                Şəkilli rəylər (1,788)
-              </div>
-              <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-2 cursor-pointer">
-                <img src={startIcon} />
-                <p className="font-medium text-sm">1</p>
-              </div>
-              <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-2 cursor-pointer">
-                <img src={startIcon} />
-                <p className="font-medium text-sm">2</p>
-              </div>
-              <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-2 cursor-pointer">
-                <img src={startIcon} />
-                <p className="font-medium text-sm">3</p>
-              </div>
-              <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-2 cursor-pointer">
-                <img src={startIcon} />
-                <p className="font-medium text-sm">4</p>
-              </div>
-              <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-2 cursor-pointer">
-                <img src={startIcon} />
-                <p className="font-medium text-sm">5</p>
-              </div>
-            </div>
-            <div>
-              <p className="font-semibold text-md pl-2">Şəkilli rəylər</p>
-              <div className="photos flex gap-4" style={{ height: "130px" }}>
-                <div className="photo rounded-md h-full ">
-                  <img className="h-full" src={icon} />
-                </div>
-                <div className="photo rounded-md h-full ">
-                  <img className="h-full" src={icon} />
-                </div>
-                <div className="photo rounded-md h-full ">
-                  <img className="h-full" src={icon} />
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="mb-10 mt-10 border-2 rounded-md">
+        <div className="border-b-2 pt-2 px-5">
+          <Tabs item={item} setItem={setItem} tabs={tabs} />
         </div>
-        <div className="filter-message my-6">
-          <p className="font-semibold text-md ">Dəyərləndirmələr</p>
-          {/* dropdown */}
-        </div>
-        <div className="messages flex-col">
-          <div className="message mb-8">
-            <div className="flex gap-3">
+        {item === 1 && (
+          <div className="features mt-4 px-4 py-6">
+            <div className="flex flex-wrap gap-6 pl-10">
               <div
-                className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
-                style={{ width: "44px", height: "44px" }}
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
               >
-                <div className="flex gap-1 text-white">
-                  <p>G</p>
-                  <p>A</p>
-                </div>
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Brend:
+                </p>
+                <p className="text-sm font-semibold">Apple</p>
               </div>
-              <div className="flex-col">
-                <div className="name flex gap-2">
-                  <p className="font-semibold text-sm">G*****</p>
-                  <p className="font-semibold text-sm">A*****</p>
-                </div>
-                <div className="flex gap-2">
-                  <div className="date font-semibold text-sm">12 dekabr</div>
-                  <div className="location font-semibold text-sm">Gəncə</div>
-                </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Prosessor:
+                </p>
+                <p className="text-sm font-semibold">Apple M1</p>
               </div>
-            </div>
-            <div className="rating-starts my-3">
-              <Rating value={"1.5"} />
-            </div>
-            <div className="content w-3/4">
-              <p className="font-semibold text-sm ">
-                Mən onu sevirəm, qablaşdırma mükəmməldir
-              </p>
-              <p className="font-normal text-sm">
-                Aldığım kimi evdə idi, bu gün geyinmək istədim, yan tərəfdəki
-                etiket olan yer, deşikdi, heyf. 184 yaşım M. L ölçü böyük olur.
-                Yaxşı məhsuldur, amma bir az nazikdir, ondan başqa gözəldir.
-              </p>
-            </div>
-            <div className="buttons flex gap-3 mt-3">
-              <div className="agree-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center cursor-pointer">
-                <img
-                  src={agreeIcon}
-                  style={{ width: "20px", height: "20px" }}
-                />
-                <p className="text-sm font-semibold">24</p>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Rəng:
+                </p>
+                <p className="text-sm font-semibold">Mavi</p>
               </div>
-              <div className="explaint-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center cursor-pointer">
-                <img
-                  src={explaintIcon}
-                  style={{ width: "20px", height: "20px" }}
-                />
-                <p className="text-sm font-semibold">Şikayət</p>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Məhsul növü:
+                </p>
+                <p className="text-sm font-semibold">Kompüter</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Kateqoriya:
+                </p>
+                <p className="text-sm font-semibold">Elektronika</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Yaddaş:
+                </p>
+                <p className="text-sm font-semibold">256GB</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Zəmanət müddəti:
+                </p>
+                <p className="text-sm font-semibold">8 il</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  İstehsalçı ölkə:
+                </p>
+                <p className="text-sm font-semibold">America, China</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Kamera:
+                </p>
+                <p className="text-sm font-semibold">Camera facetime</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Audio:
+                </p>
+                <p className="text-sm font-semibold">Dolby Atmos</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Keyboard:
+                </p>
+                <p className="text-sm font-semibold">Apple magic keyboard</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Wireless:
+                </p>
+                <p className="text-sm font-semibold">Wifi, Bluetooth</p>
+              </div>
+              <div
+                className="flex items-center justify-between border-2 border-gray-200 py-2.5 px-4 rounded-md"
+                style={{ width: "550px" }}
+              >
+                <p style={{ color: "#5D5F70" }} className="text-sm">
+                  Port:
+                </p>
+                <p className="text-sm font-semibold">Display port</p>
               </div>
             </div>
           </div>
-          <div className="message mb-8">
-            <div className="flex gap-3">
-              <div
-                className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
-                style={{ width: "44px", height: "44px" }}
-              >
-                <div className="flex gap-1 text-white">
-                  <p>G</p>
-                  <p>A</p>
+        )}
+        {item === 2 && (
+          <div className="rating-rewiews flex-col rounded-md px-8 py-6">
+            <p className="font-semibold text-xl mb-8 ">Reytinq və baxışlar</p>
+            <div className="flex gap-5 ">
+              <div className="rating-count border-2 border-gray-100 w-1/5 py-4 px-4 rounded-lg">
+                <p className="count text-3xl font-semibold mb-3">3.5</p>
+                <div className="flex gap-2.5 items-center mb-2">
+                  <div className="w-1/2">
+                    <Rating value={"3.5"} />
+                  </div>
+                  <p
+                    className="text-sm w-1/2 font-medium"
+                    style={{ color: "#5D5F70" }}
+                  >
+                    248 reytinq
+                  </p>
+                </div>
+                <div className="progress flex-col">
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="flex gap-1">
+                      <img src={startIcon} />
+                      <p>5</p>
+                    </div>
+                    <HorizontalProgressBar value={70} maxValue={100} />
+                  </div>
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="flex gap-1">
+                      <img src={startIcon} />
+                      <p>4</p>
+                    </div>
+                    <HorizontalProgressBar value={40} maxValue={100} />
+                  </div>
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="flex gap-1">
+                      <img src={startIcon} />
+                      <p>3</p>
+                    </div>
+                    <HorizontalProgressBar value={30} maxValue={100} />
+                  </div>
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="flex gap-1">
+                      <img src={startIcon} />
+                      <p>2</p>
+                    </div>
+                    <HorizontalProgressBar value={20} maxValue={100} />
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="flex gap-1">
+                      <img src={startIcon} />
+                      <p>1</p>
+                    </div>
+                    <HorizontalProgressBar value={10} maxValue={100} />
+                  </div>
                 </div>
               </div>
-              <div className="flex-col">
-                <div className="name flex gap-2">
-                  <p className="font-semibold text-sm">G*****</p>
-                  <p className="font-semibold text-sm">A*****</p>
+              <div className="w-4/5 flex-col">
+                <div className="mb-6 flex gap-3">
+                  <div className="py-2 px-4 border-2 border-gray-100 rounded-md font-medium text-sm cursor-pointer">
+                    Bütün rəylər
+                  </div>
+                  <div className="py-2 px-4 border-2 border-gray-100 rounded-md font-medium text-sm cursor-pointer">
+                    Şəkilli rəylər (1,788)
+                  </div>
+                  <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-3 cursor-pointer">
+                    <img src={startIcon} />
+                    <p className="font-medium text-sm">1</p>
+                  </div>
+                  <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-3 cursor-pointer">
+                    <img src={startIcon} />
+                    <p className="font-medium text-sm">2</p>
+                  </div>
+                  <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-3 cursor-pointer">
+                    <img src={startIcon} />
+                    <p className="font-medium text-sm">3</p>
+                  </div>
+                  <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-3 cursor-pointer">
+                    <img src={startIcon} />
+                    <p className="font-medium text-sm">4</p>
+                  </div>
+                  <div className="flex gap-1 items-center justify-center border-2 border-gray-100 rounded-md px-3 cursor-pointer">
+                    <img src={startIcon} />
+                    <p className="font-medium text-sm">5</p>
+                  </div>
                 </div>
-                <div className="flex gap-2">
-                  <div className="date font-semibold text-sm">12 dekabr</div>
-                  <div className="location font-semibold text-sm">Gəncə</div>
+                <div>
+                  <p className="font-semibold text-md pl-2">Şəkilli rəylər</p>
+                  <div
+                    className="photos flex gap-4"
+                    style={{ height: "130px" }}
+                  >
+                    <div className="photo rounded-md h-full ">
+                      <img className="h-full" src={icon} />
+                    </div>
+                    <div className="photo rounded-md h-full ">
+                      <img className="h-full" src={icon} />
+                    </div>
+                    <div className="photo rounded-md h-full ">
+                      <img className="h-full" src={icon} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="rating-starts my-3">
-              <Rating value={"245"} />
+            <div className="filter-message my-6">
+              <p className="font-semibold text-md ">Dəyərləndirmələr</p>
+              {/* dropdown */}
             </div>
-            <div className="content w-3/4">
-              <p className="font-semibold text-sm ">
-                Mən onu sevirəm, qablaşdırma mükəmməldir
+            <div className="messages flex-col">
+              <div className="message mb-8">
+                <div className="flex gap-3">
+                  <div
+                    className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
+                    style={{ width: "44px", height: "44px" }}
+                  >
+                    <div className="flex gap-1 text-white">
+                      <p>G</p>
+                      <p>A</p>
+                    </div>
+                  </div>
+                  <div className="flex-col">
+                    <div className="name flex gap-2">
+                      <p className="font-semibold text-sm">G*****</p>
+                      <p className="font-semibold text-sm">A*****</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="date font-semibold text-sm">
+                        12 dekabr
+                      </div>
+                      <div className="location font-semibold text-sm">
+                        Gəncə
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="rating-starts my-3">
+                  <Rating value={"1.5"} />
+                </div>
+                <div className="content w-3/4">
+                  <p className="font-semibold text-sm ">
+                    Mən onu sevirəm, qablaşdırma mükəmməldir
+                  </p>
+                  <p className="font-normal text-sm">
+                    Aldığım kimi evdə idi, bu gün geyinmək istədim, yan
+                    tərəfdəki etiket olan yer, deşikdi, heyf. 184 yaşım M. L
+                    ölçü böyük olur. Yaxşı məhsuldur, amma bir az nazikdir,
+                    ondan başqa gözəldir.
+                  </p>
+                </div>
+                <div className="buttons flex gap-3 mt-3">
+                  <div className="agree-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center cursor-pointer">
+                    <img
+                      src={agreeIcon}
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    <p className="text-sm font-semibold">24</p>
+                  </div>
+                  <div className="explaint-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center cursor-pointer">
+                    <img
+                      src={explaintIcon}
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    <p className="text-sm font-semibold">Şikayət</p>
+                  </div>
+                </div>
+              </div>
+              <div className="message mb-8">
+                <div className="flex gap-3">
+                  <div
+                    className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
+                    style={{ width: "44px", height: "44px" }}
+                  >
+                    <div className="flex gap-1 text-white">
+                      <p>G</p>
+                      <p>A</p>
+                    </div>
+                  </div>
+                  <div className="flex-col">
+                    <div className="name flex gap-2">
+                      <p className="font-semibold text-sm">G*****</p>
+                      <p className="font-semibold text-sm">A*****</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="date font-semibold text-sm">
+                        12 dekabr
+                      </div>
+                      <div className="location font-semibold text-sm">
+                        Gəncə
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="rating-starts my-3">
+                  <Rating value={"245"} />
+                </div>
+                <div className="content w-3/4">
+                  <p className="font-semibold text-sm ">
+                    Mən onu sevirəm, qablaşdırma mükəmməldir
+                  </p>
+                  <p className="font-normal text-sm">
+                    Aldığım kimi evdə idi, bu gün geyinmək istədim, yan
+                    tərəfdəki etiket olan yer, deşikdi, heyf. 184 yaşım M. L
+                    ölçü böyük olur. Yaxşı məhsuldur, amma bir az nazikdir,
+                    ondan başqa gözəldir.
+                  </p>
+                </div>
+                <div className="buttons flex gap-3 mt-3">
+                  <div className="agree-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center">
+                    <img
+                      src={agreeIcon}
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    <p className="text-sm font-semibold">24</p>
+                  </div>
+                  <div className="explaint-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center">
+                    <img
+                      src={explaintIcon}
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    <p className="text-sm font-semibold">Şikayət</p>
+                  </div>
+                </div>
+              </div>
+              <div className="message mb-8">
+                <div className="flex gap-3">
+                  <div
+                    className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
+                    style={{ width: "44px", height: "44px" }}
+                  >
+                    <div className="flex gap-1 text-white">
+                      <p>G</p>
+                      <p>A</p>
+                    </div>
+                  </div>
+                  <div className="flex-col">
+                    <div className="name flex gap-2">
+                      <p className="font-semibold text-sm">G*****</p>
+                      <p className="font-semibold text-sm">A*****</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="date font-semibold text-sm">
+                        12 dekabr
+                      </div>
+                      <div className="location font-semibold text-sm">
+                        Gəncə
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="rating-starts my-3">
+                  <Rating value={"2.5"} />
+                </div>
+                <div className="content w-3/4">
+                  <p className="font-semibold text-sm ">
+                    Mən onu sevirəm, qablaşdırma mükəmməldir
+                  </p>
+                  <p className="font-normal text-sm">
+                    Aldığım kimi evdə idi, bu gün geyinmək istədim, yan
+                    tərəfdəki etiket olan yer, deşikdi, heyf. 184 yaşım M. L
+                    ölçü böyük olur. Yaxşı məhsuldur, amma bir az nazikdir,
+                    ondan başqa gözəldir.
+                  </p>
+                </div>
+                <div className="buttons flex gap-3 mt-3">
+                  <div className="agree-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center">
+                    <img
+                      src={agreeIcon}
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    <p className="text-sm font-semibold">24</p>
+                  </div>
+                  <div className="explaint-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center">
+                    <img
+                      src={explaintIcon}
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    <p className="text-sm font-semibold">Şikayət</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="see-all mt-12">
+              <p className="text-orange-500 font-semibold text-md underline cursor-pointer">
+                Hamısını gör
               </p>
-              <p className="font-normal text-sm">
-                Aldığım kimi evdə idi, bu gün geyinmək istədim, yan tərəfdəki
-                etiket olan yer, deşikdi, heyf. 184 yaşım M. L ölçü böyük olur.
-                Yaxşı məhsuldur, amma bir az nazikdir, ondan başqa gözəldir.
-              </p>
-            </div>
-            <div className="buttons flex gap-3 mt-3">
-              <div className="agree-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center">
-                <img
-                  src={agreeIcon}
-                  style={{ width: "20px", height: "20px" }}
-                />
-                <p className="text-sm font-semibold">24</p>
-              </div>
-              <div className="explaint-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center">
-                <img
-                  src={explaintIcon}
-                  style={{ width: "20px", height: "20px" }}
-                />
-                <p className="text-sm font-semibold">Şikayət</p>
-              </div>
             </div>
           </div>
-          <div className="message mb-8">
-            <div className="flex gap-3">
-              <div
-                className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
-                style={{ width: "44px", height: "44px" }}
-              >
-                <div className="flex gap-1 text-white">
-                  <p>G</p>
-                  <p>A</p>
+        )}
+        {item === 3 && (
+          <div className="question-answers  rounded-md px-8 py-6">
+            <p className="font-semibold text-xl mb-8">Sual-cavablar</p>
+            <div className="questions">
+              <div className="question mb-5">
+                <div className="user flex gap-3 mb-2">
+                  <div
+                    className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
+                    style={{ width: "44px", height: "44px" }}
+                  >
+                    <div className="flex gap-1 text-white">
+                      <p>G</p>
+                      <p>A</p>
+                    </div>
+                  </div>
+                  <div className="flex-col">
+                    <div className="name flex gap-2">
+                      <p className="font-semibold text-sm">G*****</p>
+                      <p className="font-semibold text-sm">A*****</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="date font-semibold text-sm">
+                        12 dekabr
+                      </div>
+                      <div className="location font-semibold text-sm">
+                        Gəncə
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mb-2 text-sm ">
+                  Salam bu məhsulu kredit kartı ilə neçə taksitlə ala bilərəm və
+                  rənginə görə digərlərindən ucuzdur.
+                </div>
+                <div className="answer bg-gray-100 rounded-md p-5 mt-3">
+                  <div className="seller flex gap-1 items-center mb-2">
+                    <div className="logo rounded-full p-2 ">
+                      <img src={appleLogo} />
+                    </div>
+                    <div className="name flex gap-1">
+                      <p>Apple</p>
+                      <img src={blueMarkIcon} />
+                    </div>
+                  </div>
+                  <p className="text-sm font-medium">
+                    Məhsulu Səbətə Götürün, Ödəniş Ekranına Keçin, Kart
+                    Məlumatlarını Daxil Edin, Ödəniş Alternativlərini Görə
+                    Bilərsiniz.
+                  </p>
                 </div>
               </div>
-              <div className="flex-col">
-                <div className="name flex gap-2">
-                  <p className="font-semibold text-sm">G*****</p>
-                  <p className="font-semibold text-sm">A*****</p>
+              <div className="question mb-5">
+                <div className="user flex gap-3 mb-2">
+                  <div
+                    className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
+                    style={{ width: "44px", height: "44px" }}
+                  >
+                    <div className="flex gap-1 text-white">
+                      <p>G</p>
+                      <p>A</p>
+                    </div>
+                  </div>
+                  <div className="flex-col">
+                    <div className="name flex gap-2">
+                      <p className="font-semibold text-sm">G*****</p>
+                      <p className="font-semibold text-sm">A*****</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="date font-semibold text-sm">
+                        12 dekabr
+                      </div>
+                      <div className="location font-semibold text-sm">
+                        Gəncə
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex gap-2">
-                  <div className="date font-semibold text-sm">12 dekabr</div>
-                  <div className="location font-semibold text-sm">Gəncə</div>
+                <div className="mb-2 text-sm ">
+                  Salam bu məhsulu kredit kartı ilə neçə taksitlə ala bilərəm və
+                  rənginə görə digərlərindən ucuzdur.
                 </div>
-              </div>
-            </div>
-            <div className="rating-starts my-3">
-              <Rating value={"2.5"} />
-            </div>
-            <div className="content w-3/4">
-              <p className="font-semibold text-sm ">
-                Mən onu sevirəm, qablaşdırma mükəmməldir
-              </p>
-              <p className="font-normal text-sm">
-                Aldığım kimi evdə idi, bu gün geyinmək istədim, yan tərəfdəki
-                etiket olan yer, deşikdi, heyf. 184 yaşım M. L ölçü böyük olur.
-                Yaxşı məhsuldur, amma bir az nazikdir, ondan başqa gözəldir.
-              </p>
-            </div>
-            <div className="buttons flex gap-3 mt-3">
-              <div className="agree-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center">
-                <img
-                  src={agreeIcon}
-                  style={{ width: "20px", height: "20px" }}
-                />
-                <p className="text-sm font-semibold">24</p>
-              </div>
-              <div className="explaint-btn py-1 px-2 border-2 border-gray-100 flex gap-1 items-center justify-center">
-                <img
-                  src={explaintIcon}
-                  style={{ width: "20px", height: "20px" }}
-                />
-                <p className="text-sm font-semibold">Şikayət</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="see-all mt-12">
-          <p className="text-orange-500 font-semibold text-md underline cursor-pointer">
-            Hamısını gör
-          </p>
-        </div>
-      </div>
-      <div className="question-answers border-2 border-gray-100 ounded-md px-8 py-10">
-        <p className="font-semibold text-xl mb-8">Sual-cavablar</p>
-        <div className="questions">
-          <div className="question mb-5">
-            <div className="user flex gap-3 mb-2">
-              <div
-                className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
-                style={{ width: "44px", height: "44px" }}
-              >
-                <div className="flex gap-1 text-white">
-                  <p>G</p>
-                  <p>A</p>
+                <div className="answer bg-gray-100 rounded-md p-5 mt-3">
+                  <div className="seller flex gap-1 items-center mb-2">
+                    <div className="logo rounded-full p-2 ">
+                      <img src={appleLogo} />
+                    </div>
+                    <div className="name flex gap-1">
+                      <p>Apple</p>
+                      <img src={blueMarkIcon} />
+                    </div>
+                  </div>
+                  <p className="text-sm font-medium">
+                    Məhsulu Səbətə Götürün, Ödəniş Ekranına Keçin, Kart
+                    Məlumatlarını Daxil Edin, Ödəniş Alternativlərini Görə
+                    Bilərsiniz.
+                  </p>
                 </div>
               </div>
-              <div className="flex-col">
-                <div className="name flex gap-2">
-                  <p className="font-semibold text-sm">G*****</p>
-                  <p className="font-semibold text-sm">A*****</p>
+              <div className="question">
+                <div className="user flex gap-3 mb-2">
+                  <div
+                    className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
+                    style={{ width: "44px", height: "44px" }}
+                  >
+                    <div className="flex gap-1 text-white">
+                      <p>G</p>
+                      <p>A</p>
+                    </div>
+                  </div>
+                  <div className="flex-col">
+                    <div className="name flex gap-2">
+                      <p className="font-semibold text-sm">G*****</p>
+                      <p className="font-semibold text-sm">A*****</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="date font-semibold text-sm">
+                        12 dekabr
+                      </div>
+                      <div className="location font-semibold text-sm">
+                        Gəncə
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex gap-2">
-                  <div className="date font-semibold text-sm">12 dekabr</div>
-                  <div className="location font-semibold text-sm">Gəncə</div>
+                <div className="mb-2 text-sm">
+                  Salam bu məhsulu kredit kartı ilə neçə taksitlə ala bilərəm və
+                  rənginə görə digərlərindən ucuzdur.
                 </div>
-              </div>
-            </div>
-            <div className="mb-2 text-sm ">
-              Salam bu məhsulu kredit kartı ilə neçə taksitlə ala bilərəm və
-              rənginə görə digərlərindən ucuzdur.
-            </div>
-            <div className="answer bg-gray-100 rounded-md p-5 mt-3">
-              <div className="seller flex gap-1 items-center mb-2">
-                <div className="logo rounded-full p-2 ">
-                  <img src={appleLogo} />
-                </div>
-                <div className="name flex gap-1">
-                  <p>Apple</p>
-                  <img src={blueMarkIcon} />
-                </div>
-              </div>
-              <p className="text-sm font-medium">
-                Məhsulu Səbətə Götürün, Ödəniş Ekranına Keçin, Kart
-                Məlumatlarını Daxil Edin, Ödəniş Alternativlərini Görə
-                Bilərsiniz.
-              </p>
-            </div>
-          </div>
-          <div className="question mb-5">
-            <div className="user flex gap-3 mb-2">
-              <div
-                className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
-                style={{ width: "44px", height: "44px" }}
-              >
-                <div className="flex gap-1 text-white">
-                  <p>G</p>
-                  <p>A</p>
-                </div>
-              </div>
-              <div className="flex-col">
-                <div className="name flex gap-2">
-                  <p className="font-semibold text-sm">G*****</p>
-                  <p className="font-semibold text-sm">A*****</p>
-                </div>
-                <div className="flex gap-2">
-                  <div className="date font-semibold text-sm">12 dekabr</div>
-                  <div className="location font-semibold text-sm">Gəncə</div>
-                </div>
-              </div>
-            </div>
-            <div className="mb-2 text-sm ">
-              Salam bu məhsulu kredit kartı ilə neçə taksitlə ala bilərəm və
-              rənginə görə digərlərindən ucuzdur.
-            </div>
-            <div className="answer bg-gray-100 rounded-md p-5 mt-3">
-              <div className="seller flex gap-1 items-center mb-2">
-                <div className="logo rounded-full p-2 ">
-                  <img src={appleLogo} />
-                </div>
-                <div className="name flex gap-1">
-                  <p>Apple</p>
-                  <img src={blueMarkIcon} />
-                </div>
-              </div>
-              <p className="text-sm font-medium">
-                Məhsulu Səbətə Götürün, Ödəniş Ekranına Keçin, Kart
-                Məlumatlarını Daxil Edin, Ödəniş Alternativlərini Görə
-                Bilərsiniz.
-              </p>
-            </div>
-          </div>
-          <div className="question">
-            <div className="user flex gap-3 mb-2">
-              <div
-                className="profile-photo flex items-center justift-center rounded-full px-2 py-2 bg-black "
-                style={{ width: "44px", height: "44px" }}
-              >
-                <div className="flex gap-1 text-white">
-                  <p>G</p>
-                  <p>A</p>
-                </div>
-              </div>
-              <div className="flex-col">
-                <div className="name flex gap-2">
-                  <p className="font-semibold text-sm">G*****</p>
-                  <p className="font-semibold text-sm">A*****</p>
-                </div>
-                <div className="flex gap-2">
-                  <div className="date font-semibold text-sm">12 dekabr</div>
-                  <div className="location font-semibold text-sm">Gəncə</div>
+                <div className="answer bg-gray-100 rounded-md p-5 mt-3">
+                  <div className="seller flex gap-1 items-center mb-2">
+                    <div className="logo rounded-full p-2 ">
+                      <img src={appleLogo} />
+                    </div>
+                    <div className="name flex gap-1">
+                      <p>Apple</p>
+                      <img src={blueMarkIcon} />
+                    </div>
+                  </div>
+                  <p className="text-sm font-medium">
+                    Məhsulu Səbətə Götürün, Ödəniş Ekranına Keçin, Kart
+                    Məlumatlarını Daxil Edin, Ödəniş Alternativlərini Görə
+                    Bilərsiniz.
+                  </p>
                 </div>
               </div>
             </div>
-            <div className="mb-2 text-sm">
-              Salam bu məhsulu kredit kartı ilə neçə taksitlə ala bilərəm və
-              rənginə görə digərlərindən ucuzdur.
-            </div>
-            <div className="answer bg-gray-100 rounded-md p-5 mt-3">
-              <div className="seller flex gap-1 items-center mb-2">
-                <div className="logo rounded-full p-2 ">
-                  <img src={appleLogo} />
-                </div>
-                <div className="name flex gap-1">
-                  <p>Apple</p>
-                  <img src={blueMarkIcon} />
-                </div>
-              </div>
-              <p className="text-sm font-medium">
-                Məhsulu Səbətə Götürün, Ödəniş Ekranına Keçin, Kart
-                Məlumatlarını Daxil Edin, Ödəniş Alternativlərini Görə
-                Bilərsiniz.
+            <div className="see-all mt-12">
+              <p className="text-orange-500 font-semibold text-md underline cursor-pointer">
+                Hamısını gör
               </p>
             </div>
           </div>
-        </div>
-        <div className="see-all mt-12">
-          <p className="text-orange-500 font-semibold text-md underline cursor-pointer">
-            Hamısını gör
-          </p>
-        </div>
+        )}
       </div>
       <section className="slider-products mt-20" style={{ height: "500px" }}>
         <p className="font-semibold text-2xl mb-10">Sizə uyğun məhsullar</p>

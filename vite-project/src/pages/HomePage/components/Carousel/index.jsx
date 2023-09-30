@@ -15,7 +15,7 @@ export default function Carousel() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -23,8 +23,7 @@ export default function Carousel() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="homepage-carousel mySwiper"
-        
+        className="homepage-carousel"
       >
         <SwiperSlide>
           <div className="flex gap-20 px-10">
@@ -39,7 +38,7 @@ export default function Carousel() {
                 It is a long established fact that a reader will be distracted
                 by the readable content of a page when looking.
               </p>
-              <div className=" py-2.5 rounded-md border-2 border-black w-1/4 text-sm">
+              <div className=" py-2.5 rounded-md border-2 border-black w-1/4 text-sm  hover:bg-black hover:text-white">
                 <button className="font-semibold pl-3">Alış-veriş et</button>
               </div>
             </div>
@@ -61,7 +60,7 @@ export default function Carousel() {
                 It is a long established fact that a reader will be distracted
                 by the readable content of a page when looking.
               </p>
-              <div className=" py-2.5 rounded-md border-2 border-black w-1/4 text-sm">
+              <div className=" py-2.5 rounded-md border-2 border-black w-1/4 text-sm  hover:bg-black hover:text-white">
                 <button className="font-semibold pl-3">Alış-veriş et</button>
               </div>
             </div>
@@ -83,7 +82,7 @@ export default function Carousel() {
                 It is a long established fact that a reader will be distracted
                 by the readable content of a page when looking.
               </p>
-              <div className=" py-2.5 rounded-md border-2 border-black w-1/4 text-sm">
+              <div className=" py-2.5 rounded-md border-2 border-black w-1/4 text-sm  hover:bg-black hover:text-white">
                 <button className="font-semibold pl-3">Alış-veriş et</button>
               </div>
             </div>
@@ -92,7 +91,8 @@ export default function Carousel() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide><div className="flex gap-20 px-10">
+        <SwiperSlide>
+          <div className="flex gap-20 px-10">
             <div className="content w-2/5 p- pl-36 pt-20">
               <p className="text-sm font-medium text-start mb-3 ">
                 iPhone 14 Pro Max
@@ -104,14 +104,15 @@ export default function Carousel() {
                 It is a long established fact that a reader will be distracted
                 by the readable content of a page when looking.
               </p>
-              <div className=" py-2.5 rounded-md border-2 border-black w-1/4 text-sm">
+              <div className=" py-2.5 rounded-md border-2 border-black w-1/4 text-sm  hover:bg-black hover:text-white">
                 <button className="font-semibold pl-3">Alış-veriş et</button>
               </div>
             </div>
             <div className="w-2/5 absolute bottom-0 right-20">
               <img src={background} style={{ width: "500px" }} />
             </div>
-          </div></SwiperSlide>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </>
   );

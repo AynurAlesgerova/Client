@@ -1,49 +1,153 @@
-import { useState } from "react";
-import { Virtual, Navigation, Pagination } from "swiper/modules";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import productImage from "../../../../assets/images/product-image.svg";
-import Product from "../Product/index";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+// import required modules
+import { Pagination,Navigation } from "swiper/modules";
+import Product from "../Product";
+
 export default function ProductSlider() {
-  const [swiperRef, setSwiperRef] = useState(null);
-  const [slides, setSlides] = useState(
-    Array.from({ length: 500 }).map((_, index) => (
-      <Product
-        key={index}
-        brand={"Spykar"}
-        name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
-        currentPrice={400.99}
-        previousPrice={550.99}
-        ratingCount={"3.7"}
-        commentCount={"120"}
-        image={productImage}
-      />
-    ))
-  );
   return (
     <>
       <Swiper
-       className="swiper2"
-        modules={[Virtual, Navigation, Pagination]}
-        onSwiper={setSwiperRef}
-        slidesPerView={3}
-        centeredSlides={true}
-        spaceBetween={30}
+        slidesPerView={4}
+        spaceBetween={20}
         pagination={{
-          type: "fraction",
+          clickable: true,
         }}
-        navigation={true}
-        virtual
+        modules={[Pagination,Navigation]}
+        className="ProductSlider"
       >
-        {slides.map((slideContent, index) => (
-          <SwiperSlide key={slideContent} virtualIndex={index} className="Slider-product">
-            {slideContent}
-          </SwiperSlide>
-        ))}
+        <SwiperSlide>
+          <Product
+            // key={index}
+            width={"300px"}
+            styled={true}
+            brand={"Spykar"}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Product
+            // key={index}
+            width={"300px"}
+            styled={true}
+            brand={"Spykar"}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Product
+            // key={index}
+            width={"300px"}
+            styled={true}
+            brand={"Spykar"}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Product
+            // key={index}
+            brand={"Spykar"}
+            width={"300px"}
+            styled={true}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Product
+            // key={index}
+            brand={"Spykar"}
+            width={"300px"}
+            styled={true}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Product
+            // key={index}
+            brand={"Spykar"}
+            width={"300px"}
+            styled={true}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Product
+            // key={index}
+            brand={"Spykar"}
+            width={"300px"}
+            styled={true}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Product
+            // key={index}
+            brand={"Spykar"}
+            width={"300px"}
+            styled={true}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Product
+            // key={index}
+            brand={"Spykar"}
+            width={"300px"}
+            styled={true}
+            name={"Lorem ipsum dolor sit amet consectetur  Dolores praesentium"}
+            currentPrice={400.99}
+            previousPrice={550.99}
+            ratingCount={"3.7"}
+            commentCount={"120"}
+            image={productImage}
+          />
+        </SwiperSlide>
       </Swiper>
     </>
   );

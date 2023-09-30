@@ -71,11 +71,11 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="slider-products mb-20" style={{ height: "500px" }}>
+        <section className="slider-products" style={{ height: "500px" }}>
           <p className="font-semibold text-2xl mb-10">Sizə uyğun məhsullar</p>
           <ProductSlider />
         </section>
-        <section className="cards flex flex-wrap mb-20 gap-10 mt-20">
+        <section className="cards flex flex-wrap mb-20 gap-10 mt-32">
           <Card
             slogan={true}
             width={"600px"}
@@ -279,28 +279,30 @@ const HomePage = () => {
           </h1>
           <div className="tabs mb-10">
             <div className="flex gap-5">
-              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2">
+              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2 hover:bg-orange-600 hover:text-white hover:border-transparent cursor-pointer">
                 Geyim & paltar
               </div>
-              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2">
+              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2 hover:bg-orange-600 hover:text-white hover:border-transparent cursor-pointer">
                 Elektronika
               </div>
-              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2">
+              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2 hover:bg-orange-600 hover:text-white hover:border-transparent cursor-pointer">
                 Ayaqqabı & Çanta
               </div>
-              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2">
+              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2 hover:bg-orange-600 hover:text-white hover:border-transparent cursor-pointer">
                 Ev & Mebel
               </div>
-              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2">
+              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2 hover:bg-orange-600 hover:text-white hover:border-transparent cursor-pointer">
                 Oyuncaq
               </div>
-              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2">
+              <div className="flex items-center justify-center px-5 py-2 rounded-3xl border-2 hover:bg-orange-600 hover:text-white hover:border-transparent cursor-pointer">
                 Kasmetika
               </div>
             </div>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-4">
             <Product
+              styled={true}
+              width={"298px"}
               brand={"Spykar"}
               name={
                 "Lorem ipsum dolor sit amet consectetur  Dolores praesentium"
@@ -312,6 +314,8 @@ const HomePage = () => {
               image={productImage}
             />
             <Product
+              styled={true}
+              width={"298px"}
               brand={"Bershka"}
               name={"Lorem ipsum dolor sit amet consectetu Dolores praesentium"}
               currentPrice={250.99}
@@ -321,6 +325,8 @@ const HomePage = () => {
               image={productImage}
             />
             <Product
+              styled={true}
+              width={"298px"}
               brand={"Spykar"}
               name={"Lorem ipsum dol Dolores praesentium Dolores praesentium"}
               currentPrice={220.99}
@@ -330,6 +336,41 @@ const HomePage = () => {
               image={productImage}
             />
             <Product
+              styled={true}
+              width={"298px"}
+              brand={"Spykar"}
+              name={"Lorem ipsum dol Dolores praesentium Dolores praesentium"}
+              currentPrice={220.99}
+              previousPrice={190.99}
+              ratingCount={"3.2"}
+              commentCount={"150"}
+              image={productImage}
+            />
+            <Product
+              styled={true}
+              width={"298px"}
+              brand={"Spykar"}
+              name={"Lorem ipsum dol Dolores praesentium Dolores praesentium"}
+              currentPrice={220.99}
+              previousPrice={190.99}
+              ratingCount={"3.2"}
+              commentCount={"150"}
+              image={productImage}
+            />
+            <Product
+              styled={true}
+              width={"298px"}
+              brand={"Spykar"}
+              name={"Lorem ipsum dol Dolores praesentium Dolores praesentium"}
+              currentPrice={220.99}
+              previousPrice={190.99}
+              ratingCount={"3.2"}
+              commentCount={"150"}
+              image={productImage}
+            />
+            <Product
+              styled={true}
+              width={"298px"}
               brand={"Spykar"}
               name={"Lorem ipsum dol Dolores praesentium Dolores praesentium"}
               currentPrice={220.99}
